@@ -222,8 +222,9 @@ PERIODIC_TABLE = [
 ]
 
 # ==================== VISUALIZATION ====================
-def create_orbital_3d(basis_data, orbital_type='s'):
-    """Fast 3D orbital visualization"""
+@st.cache_data(show_spinner=False)
+def create_orbital_3d(basis_data, orbital_type):
+    """Fast 3D orbital visualization with caching"""
     element_data = list(basis_data['elements'].values())[0]
     shells = element_data['electron_shells']
     
@@ -241,19 +242,19 @@ def create_orbital_3d(basis_data, orbital_type='s'):
     if not shell:
         return None
     
-    # ULTRA HIGH RESOLUTION for smooth surfaces - no triangles
+    # OPTIMIZED RESOLUTION - balance between quality and speed
     if 'p' in orbital_type:
         grid_range = 4.0
-        grid_points = 60
+        grid_points = 45  # Reduced from 60 for speed
     elif 'd' in orbital_type:
         grid_range = 3.5
-        grid_points = 65
+        grid_points = 50  # Reduced from 65 for speed
     elif 'f' in orbital_type:
         grid_range = 4.0
-        grid_points = 70  # High resolution for complex f-orbitals
+        grid_points = 50  # Reduced from 70 for speed
     else:
         grid_range = 3.0
-        grid_points = 60
+        grid_points = 45  # Reduced from 60 for speed
     
     x = np.linspace(-grid_range, grid_range, grid_points)
     y = np.linspace(-grid_range, grid_range, grid_points)
