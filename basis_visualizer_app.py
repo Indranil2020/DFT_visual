@@ -661,7 +661,7 @@ def main():
     # ==================== PERIODIC TABLE (COLLAPSIBLE) ====================
     available_elements = cache['basis_sets'][basis_name]['available_elements']
     
-    with st.expander(f"Select Element ({len(available_elements)} available)", expanded=False):
+    with st.expander(f"Select Element ({len(available_elements)} available)", expanded=True):
         # Display table
         for row in PERIODIC_TABLE:
             cols = st.columns(18)
