@@ -43,21 +43,21 @@ def create_comparison_table(basis_data1, basis_data2, basis_name1, basis_name2, 
     })
     
     # Polarization
-    pol_same = analysis1['polarization'] == analysis2['polarization']
+    pol_same = analysis1['has_polarization'] == analysis2['has_polarization']
     comparison_data.append({
         'Property': 'Polarization',
-        basis_name1: 'Yes' if analysis1['polarization'] else 'No',
-        basis_name2: 'Yes' if analysis2['polarization'] else 'No',
+        basis_name1: 'Yes' if analysis1['has_polarization'] else 'No',
+        basis_name2: 'Yes' if analysis2['has_polarization'] else 'No',
         'Status': 'Same' if pol_same else 'Different',
         'Explanation': 'Ability to describe molecular bonding'
     })
     
     # Diffuse functions
-    diffuse_same = analysis1.get('diffuse', False) == analysis2.get('diffuse', False)
+    diffuse_same = analysis1['has_diffuse'] == analysis2['has_diffuse']
     comparison_data.append({
         'Property': 'Diffuse Functions',
-        basis_name1: 'Yes' if analysis1.get('diffuse', False) else 'No',
-        basis_name2: 'Yes' if analysis2.get('diffuse', False) else 'No',
+        basis_name1: 'Yes' if analysis1['has_diffuse'] else 'No',
+        basis_name2: 'Yes' if analysis2['has_diffuse'] else 'No',
         'Status': 'Same' if diffuse_same else 'Different',
         'Explanation': 'For anions and excited states'
     })

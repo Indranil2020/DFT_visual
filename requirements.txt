@@ -1,4 +1,20 @@
+# Core Framework
 streamlit>=1.28.0
-basis-set-exchange>=0.9
-numpy>=1.19.0
+
+# DFT & Quantum Chemistry
+basis-set-exchange>=0.9.0
+pyscf>=2.3.0
+
+# Scientific Computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Visualization
 plotly>=6.0.0
+
+# Data Fetching
+requests>=2.31.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0

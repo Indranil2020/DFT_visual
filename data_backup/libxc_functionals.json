@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "version": "6.2.2",
+    "source": "Libxc hardcoded",
+    "description": "Complete XC functional database",
+    "total_functionals": 18
+  },
+  "functionals": {
+    "LDA": {
+      "full_name": "LDA_X,LDA_C_VWN",
+      "type": "LDA",
+      "description": "Local Density Approximation (Slater + VWN)",
+      "year": 1980,
+      "use_case": "Fast calculations, qualitative results",
+      "accuracy": "Low",
+      "cost": "Very Fast"
+    },
+    "SVWN": {
+      "full_name": "LDA_X,LDA_C_VWN",
+      "type": "LDA",
+      "description": "Slater exchange + VWN correlation",
+      "year": 1980,
+      "use_case": "Standard LDA",
+      "accuracy": "Low",
+      "cost": "Very Fast"
+    },
+    "PBE": {
+      "full_name": "GGA_X_PBE,GGA_C_PBE",
+      "type": "GGA",
+      "description": "Perdew-Burke-Ernzerhof (most popular GGA)",
+      "year": 1996,
+      "use_case": "Solids, surfaces, general purpose",
+      "accuracy": "Medium",
+      "cost": "Fast",
+      "reference": "Phys. Rev. Lett. 77, 3865 (1996)"
+    },
+    "PBEsol": {
+      "full_name": "GGA_X_PBE_SOL,GGA_C_PBE_SOL",
+      "type": "GGA",
+      "description": "PBE revised for solids",
+      "year": 2008,
+      "use_case": "Solids, lattice constants",
+      "accuracy": "Medium-High",
+      "cost": "Fast"
+    },
+    "BLYP": {
+      "full_name": "GGA_X_B88,GGA_C_LYP",
+      "type": "GGA",
+      "description": "Becke 88 exchange + Lee-Yang-Parr correlation",
+      "year": 1988,
+      "use_case": "Molecular systems, chemistry",
+      "accuracy": "Medium",
+      "cost": "Fast"
+    },
+    "PW91": {
+      "full_name": "GGA_X_PW91,GGA_C_PW91",
+      "type": "GGA",
+      "description": "Perdew-Wang 91 (predecessor to PBE)",
+      "year": 1991,
+      "use_case": "General purpose",
+      "accuracy": "Medium",
+      "cost": "Fast"
+    },
+    "RPBE": {
+      "full_name": "GGA_X_RPBE,GGA_C_PBE",
+      "type": "GGA",
+      "description": "Revised PBE for molecules",
+      "year": 1999,
+      "use_case": "Molecular adsorption",
+      "accuracy": "Medium",
+      "cost": "Fast"
+    },
+    "B3LYP": {
+      "full_name": "HYB_GGA_XC_B3LYP",
+      "type": "Hybrid",
+      "description": "Most popular hybrid functional",
+      "year": 1994,
+      "use_case": "Molecular chemistry, thermochemistry",
+      "accuracy": "High",
+      "cost": "Slow",
+      "exact_exchange": 0.2,
+      "reference": "J. Chem. Phys. 98, 5648 (1993)"
+    },
+    "PBE0": {
+      "full_name": "HYB_GGA_XC_PBEH",
+      "type": "Hybrid",
+      "description": "Hybrid PBE (25% exact exchange)",
+      "year": 1999,
+      "use_case": "General purpose, band gaps",
+      "accuracy": "High",
+      "cost": "Slow",
+      "exact_exchange": 0.25
+    },
+    "HSE06": {
+      "full_name": "HYB_GGA_XC_HSE06",
+      "type": "Hybrid",
+      "description": "Screened hybrid for solids",
+      "year": 2006,
+      "use_case": "Solids, band gaps, large systems",
+      "accuracy": "High",
+      "cost": "Medium",
+      "exact_exchange": 0.25,
+      "screening": 0.11,
+      "reference": "J. Chem. Phys. 124, 219906 (2006)"
+    },
+    "B3PW91": {
+      "full_name": "HYB_GGA_XC_B3PW91",
+      "type": "Hybrid",
+      "description": "B3 hybrid with PW91 correlation",
+      "year": 1993,
+      "use_case": "Molecular systems",
+      "accuracy": "High",
+      "cost": "Slow",
+      "exact_exchange": 0.2
+    },
+    "CAM-B3LYP": {
+      "full_name": "HYB_GGA_XC_CAM_B3LYP",
+      "type": "Hybrid",
+      "description": "Long-range corrected B3LYP",
+      "year": 2004,
+      "use_case": "Excited states, charge transfer",
+      "accuracy": "High",
+      "cost": "Slow",
+      "exact_exchange": 0.19
+    },
+    "wB97X": {
+      "full_name": "HYB_GGA_XC_WB97X",
+      "type": "Hybrid",
+      "description": "Range-separated hybrid by Chai & Head-Gordon",
+      "year": 2008,
+      "use_case": "General purpose, thermochemistry",
+      "accuracy": "Very High",
+      "cost": "Slow",
+      "exact_exchange": 0.157
+    },
+    "TPSS": {
+      "full_name": "MGGA_X_TPSS,MGGA_C_TPSS",
+      "type": "meta-GGA",
+      "description": "Tao-Perdew-Staroverov-Scuseria",
+      "year": 2003,
+      "use_case": "General purpose, improved over GGA",
+      "accuracy": "High",
+      "cost": "Medium"
+    },
+    "SCAN": {
+      "full_name": "MGGA_X_SCAN,MGGA_C_SCAN",
+      "type": "meta-GGA",
+      "description": "Strongly Constrained and Appropriately Normed",
+      "year": 2015,
+      "use_case": "Modern general-purpose functional",
+      "accuracy": "Very High",
+      "cost": "Medium",
+      "reference": "Phys. Rev. Lett. 115, 036402 (2015)"
+    },
+    "M06-L": {
+      "full_name": "MGGA_X_M06_L,MGGA_C_M06_L",
+      "type": "meta-GGA",
+      "description": "Minnesota 06 Local (no exact exchange)",
+      "year": 2006,
+      "use_case": "Transition metals, organometallics",
+      "accuracy": "High",
+      "cost": "Medium"
+    },
+    "M06": {
+      "full_name": "HYB_MGGA_XC_M06",
+      "type": "Hybrid meta-GGA",
+      "description": "Minnesota 06 hybrid",
+      "year": 2008,
+      "use_case": "General chemistry",
+      "accuracy": "Very High",
+      "cost": "Slow",
+      "exact_exchange": 0.27
+    },
+    "M06-2X": {
+      "full_name": "HYB_MGGA_XC_M06_2X",
+      "type": "Hybrid meta-GGA",
+      "description": "Minnesota 06 with 54% exact exchange",
+      "year": 2008,
+      "use_case": "Main-group thermochemistry",
+      "accuracy": "Very High",
+      "cost": "Slow",
+      "exact_exchange": 0.54
+    }
+  },
+  "families": {
+    "LDA": {
+      "rung": 1,
+      "description": "Local Density Approximation"
+    },
+    "GGA": {
+      "rung": 2,
+      "description": "Generalized Gradient Approximation"
+    },
+    "meta-GGA": {
+      "rung": 3,
+      "description": "Meta-GGA with kinetic energy density"
+    },
+    "Hybrid": {
+      "rung": 4,
+      "description": "Hybrid functionals with exact exchange"
+    },
+    "Double-Hybrid": {
+      "rung": 5,
+      "description": "Double-hybrid with MP2 correlation"
+    }
+  },
+  "common_functionals": [
+    "LDA",
+    "PBE",
+    "BLYP",
+    "B3LYP",
+    "PBE0",
+    "HSE06",
+    "TPSS",
+    "SCAN",
+    "M06-L",
+    "wB97X"
+  ]
+}

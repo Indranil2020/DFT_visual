@@ -1,6 +1,8 @@
-# ⚛️ Basis Set Visualizer
+# ⚛️ DFT Flight Simulator
 
-Interactive learning tool for quantum chemistry basis sets with 3D visualization and educational comparisons.
+**Complete Interactive Learning Platform for Density Functional Theory**
+
+Explore the three pillars of DFT calculations: Basis Sets, Pseudopotentials, and XC Functionals through stunning visualizations and comprehensive comparisons.
 
 ## 🚀 Quick Start
 
@@ -17,6 +19,13 @@ python3 download_basis_cache.py
 This downloads metadata for 500+ basis sets locally for fast access.
 
 ### 3. Run the App
+
+**New Multi-Page App (Recommended):**
+```bash
+streamlit run app.py
+```
+
+**Legacy Single-Page App:**
 ```bash
 streamlit run basis_visualizer_app.py
 ```
@@ -25,36 +34,32 @@ Open http://localhost:8501 in your browser.
 
 ## ✨ Features
 
-### 🎯 Fast Local Access
-- All basis set metadata cached locally
-- No waiting for network requests
-- Instant loading and switching
+### 📦 Module 1: Basis Sets
+- **748 basis sets** from basis-set-exchange
+- **3D orbital visualization** with interactive rotation
+- **Comparison mode** for side-by-side analysis
+- **Shell analysis** and zeta level determination
+- **Export to any software** (Gaussian, ORCA, PySCF, etc.)
 
-### 🧪 Interactive Periodic Table
-- Click any element to explore
-- Visual highlighting of available elements
-- Organized by family (Pople, Dunning, etc.)
+### ⚛️ Module 2: Pseudopotentials
+- **432 pseudopotentials** from PseudoDojo
+- **3 functionals:** PBE, LDA, PW
+- **2 accuracies:** Standard (soft) and Stringent (hard)
+- **Visual comparison** of Coulomb vs Pseudopotential
+- **Core radius analysis** and smoothing visualization
 
-### 🌌 3D Orbital Visualization
-- Interactive 3D isosurfaces
-- Rotate, zoom, pan
-- s, p, d orbital types
+### 🔧 Module 3: XC Functionals
+- **18+ functionals** (LDA, GGA, Hybrid, meta-GGA)
+- **Jacob's Ladder** visualization
+- **Enhancement factor plots** for mathematical understanding
+- **Functional comparison** with difference analysis
+- **Use case recommendations** for each functional
 
-### 🔬 Comparison Mode
-- Compare two basis sets side-by-side
-- Visual orbital differences
-- Educational explanations of technical terms
-
-### 📚 Educational Content
-- Explains Zeta (ζ): Single, Double, Triple
-- Primitives vs Contractions
-- Polarization functions
-- Computational cost trade-offs
-
-### 📥 Export to Any Software
-- Gaussian, ORCA, NWChem, PySCF, Psi4, GAMESS-US
-- One-click download
-- Properly formatted for each tool
+### 🎯 Cross-Module Features
+- **Consistency checker** – Ensures compatible selections
+- **Session state** – Selections persist across modules
+- **Educational content** – Learn as you explore
+- **Fast caching** – Optimized performance
 
 ## 🎓 Learning Features
 
