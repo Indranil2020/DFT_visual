@@ -1,9 +1,79 @@
 """
-Psi4 MCP Server - Placeholder Module
+Core Tools Package.
 
-This file is part of the Psi4 MCP Server implementation.
-TODO: Implement according to psi4_mcp_comprehensive_plan.md
+This package provides the fundamental quantum chemistry calculation tools:
+    - Energy calculations
+    - Gradient calculations
+    - Hessian calculations
+    - Geometry optimization
 """
 
-# TODO: Add implementation
-pass
+from psi4_mcp.tools.core.base_tool import (
+    BaseTool,
+    ToolInput,
+    ToolOutput,
+    ToolMetadata,
+    ToolCategory,
+    ToolStatus,
+    ToolRegistry,
+    register_tool,
+    get_tool,
+    list_tools,
+    run_tool,
+)
+
+from psi4_mcp.tools.core.energy import (
+    EnergyTool,
+    EnergyToolInput,
+    calculate_energy,
+)
+
+from psi4_mcp.tools.core.gradient import (
+    GradientTool,
+    GradientToolInput,
+    calculate_gradient,
+)
+
+from psi4_mcp.tools.core.hessian import (
+    HessianTool,
+    HessianToolInput,
+    calculate_hessian,
+)
+
+from psi4_mcp.tools.core.optimization import (
+    OptimizationTool,
+    OptimizationToolInput,
+    optimize_geometry,
+)
+
+
+__all__ = [
+    # Base
+    "BaseTool",
+    "ToolInput",
+    "ToolOutput",
+    "ToolMetadata",
+    "ToolCategory",
+    "ToolStatus",
+    "ToolRegistry",
+    "register_tool",
+    "get_tool",
+    "list_tools",
+    "run_tool",
+    # Energy
+    "EnergyTool",
+    "EnergyToolInput",
+    "calculate_energy",
+    # Gradient
+    "GradientTool",
+    "GradientToolInput",
+    "calculate_gradient",
+    # Hessian
+    "HessianTool",
+    "HessianToolInput",
+    "calculate_hessian",
+    # Optimization
+    "OptimizationTool",
+    "OptimizationToolInput",
+    "optimize_geometry",
+]
