@@ -528,3 +528,36 @@ class SAPTOutput(CalculationOutput):
             return min(comps.keys(), key=lambda k: comps[k])
         else:
             return max(comps.keys(), key=lambda k: comps[k])
+
+
+# Backward compatibility aliases and additional classes
+FSAPTInteraction = FSAPTPairInteraction
+
+
+class SAPTElectrostatics(Psi4BaseModel):
+    """Electrostatic component details."""
+    total: float = Field(..., description="Total electrostatic energy (Hartree)")
+    penetration: Optional[float] = Field(default=None, description="Penetration term")
+    exchange_penetration: Optional[float] = Field(default=None, description="Exchange penetration")
+    kcal_mol: Optional[float] = Field(default=None, description="Energy in kcal/mol")
+
+
+class SAPTExchange(Psi4BaseModel):
+    """Exchange component details."""
+    total: float = Field(..., description="Total exchange energy (Hartree)")
+    kcal_mol: Optional[float] = Field(default=None, description="Energy in kcal/mol")
+
+
+class SAPTInduction(Psi4BaseModel):
+    """Induction component details."""
+    total: float = Field(..., description="Total induction energy (Hartree)")
+    response: Optional[float] = Field(default=None, description="Response term")
+    exchange: Optional[float] = Field(default=None, description="Exchange-induction")
+    kcal_mol: Optional[float] = Field(default=None, description="Energy in kcal/mol")
+
+
+class SAPTDispersion(Psi4BaseModel):
+    """Dispersion component details."""
+    total: float = Field(..., description="Total dispersion energy (Hartree)")
+    exchange: Optional[float] = Field(default=None, description="Exchange-dispersion")
+    kcal_mol: Optional[float] = Field(default=None, description="Energy in kcal/mol")

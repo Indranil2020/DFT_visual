@@ -589,3 +589,52 @@ class PropertyOutput(Psi4BaseModel):
         if self.polarizability:
             return self.polarizability.isotropic
         return None
+
+
+# Backward compatibility aliases
+PropertiesOutput = PropertyOutput
+DipoleMoment = DipoleMomentOutput
+QuadrupoleMoment = QuadrupoleMomentOutput
+
+
+class AtomicCharge(Psi4BaseModel):
+    """Atomic charge from population analysis."""
+    atom_index: int = Field(..., description="Atom index")
+    symbol: str = Field(..., description="Element symbol")
+    charge: float = Field(..., description="Partial charge")
+    spin: Optional[float] = Field(default=None, description="Spin density")
+
+
+class BondOrder(Psi4BaseModel):
+    """Bond order between two atoms."""
+    atom1_index: int = Field(..., description="First atom index")
+    atom2_index: int = Field(..., description="Second atom index")
+    order: float = Field(..., description="Bond order value")
+    type: str = Field(default="wiberg", description="Bond order type")
+
+
+class PopulationAnalysisOutput(Psi4BaseModel):
+    """Population analysis results."""
+    method: str = Field(..., description="Analysis method (mulliken, lowdin, npa)")
+    charges: list[AtomicCharge] = Field(default_factory=list, description="Atomic charges")
+    total_charge: float = Field(default=0.0, description="Total molecular charge")
+    dipole: Optional[DipoleMomentOutput] = Field(default=None, description="Dipole moment")
+
+
+class OrbitalInfo(Psi4BaseModel):
+    """Molecular orbital information."""
+    index: int = Field(..., description="Orbital index")
+    energy: float = Field(..., description="Orbital energy in Hartree")
+    occupation: float = Field(..., description="Occupation number")
+    symmetry: Optional[str] = Field(default=None, description="Symmetry label")
+    type: str = Field(default="canonical", description="Orbital type")
+
+
+class OrbitalOutput(Psi4BaseModel):
+    """Orbital analysis results."""
+    orbitals: list[OrbitalInfo] = Field(default_factory=list, description="Orbital data")
+    homo_index: Optional[int] = Field(default=None, description="HOMO index")
+    lumo_index: Optional[int] = Field(default=None, description="LUMO index")
+    homo_energy: Optional[float] = Field(default=None, description="HOMO energy")
+    lumo_energy: Optional[float] = Field(default=None, description="LUMO energy")
+    gap: Optional[float] = Field(default=None, description="HOMO-LUMO gap")

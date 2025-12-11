@@ -624,3 +624,40 @@ class CISOutput(CalculationOutput):
         default=None,
         description="(D) correction",
     )
+
+
+# Backward compatibility aliases and additional classes
+ExcitedState = TDDFTState
+
+
+class Transition(Psi4BaseModel):
+    """Simple transition descriptor."""
+    from_orbital: int = Field(..., description="Source orbital index")
+    to_orbital: int = Field(..., description="Target orbital index")
+    coefficient: float = Field(..., description="CI coefficient")
+    percentage: Optional[float] = Field(default=None, description="Percentage contribution")
+
+
+class TransitionProperties(Psi4BaseModel):
+    """Transition properties between states."""
+    oscillator_strength: float = Field(..., description="Oscillator strength")
+    transition_dipole: Optional[list[float]] = Field(default=None, description="Transition dipole [x, y, z]")
+    rotatory_strength: Optional[float] = Field(default=None, description="Rotatory strength")
+
+
+class EOMCCState(Psi4BaseModel):
+    """EOM-CC excited state."""
+    state_number: int = Field(..., description="State index")
+    energy: float = Field(..., description="Total energy (Hartree)")
+    energy_ev: float = Field(..., description="Excitation energy (eV)")
+    r1_norm: Optional[float] = Field(default=None, description="R1 norm")
+    r2_norm: Optional[float] = Field(default=None, description="R2 norm")
+    dominant_transitions: list[Transition] = Field(default_factory=list, description="Dominant transitions")
+
+
+class EOMCCOutput(CalculationOutput):
+    """EOM-CC calculation output."""
+    ground_state_energy: float = Field(..., description="Ground state CC energy")
+    states: list[EOMCCState] = Field(default_factory=list, description="Excited states")
+    n_states: int = Field(..., description="Number of states")
+    method: str = Field(default="EOM-CCSD", description="EOM-CC method")
