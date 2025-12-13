@@ -1,9 +1,7 @@
-"""
-Psi4 MCP Server - Placeholder Module
+"""MCSCF (Multi-Configuration SCF) Tools Package."""
+from psi4_mcp.tools.mcscf.casscf import CASSCFTool, calculate_casscf
+from psi4_mcp.tools.mcscf.rasscf import RASSCFTool, calculate_rasscf
+from psi4_mcp.tools.mcscf.mcscf_gradients import MCSCFGradientsTool, calculate_mcscf_gradient
 
-This file is part of the Psi4 MCP Server implementation.
-TODO: Implement according to psi4_mcp_comprehensive_plan.md
-"""
-
-# TODO: Add implementation
-pass
+__all__ = ["CASSCFTool", "calculate_casscf", "RASSCFTool", "calculate_rasscf",
+           "MCSCFGradientsTool", "calculate_mcscf_gradient"]
