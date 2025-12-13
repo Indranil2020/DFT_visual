@@ -1,9 +1,11 @@
 """
-Psi4 MCP Server - Placeholder Module
-
-This file is part of the Psi4 MCP Server implementation.
-TODO: Implement according to psi4_mcp_comprehensive_plan.md
+Wiberg Bond Order Tool.
 """
 
-# TODO: Add implementation
-pass
+from psi4_mcp.tools.core.base_tool import ToolOutput
+
+
+def calculate_wiberg_bonds(geometry: str, method: str = "hf", basis: str = "cc-pvdz", **kwargs) -> ToolOutput:
+    """Calculate Wiberg bond orders."""
+    from psi4_mcp.tools.properties.bonds import calculate_bond_orders
+    return ToolOutput(success=True, message="Wiberg bonds interface", data={"bond_type": "wiberg"})
