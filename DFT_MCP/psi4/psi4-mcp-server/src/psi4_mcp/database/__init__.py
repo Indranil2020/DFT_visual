@@ -1,9 +1,33 @@
 """
-Psi4 MCP Server - Placeholder Module
+Database Module for Psi4 MCP Server.
 
-This file is part of the Psi4 MCP Server implementation.
-TODO: Implement according to psi4_mcp_comprehensive_plan.md
+Provides persistent storage for calculation results, molecules,
+and other data.
 """
 
-# TODO: Add implementation
-pass
+from psi4_mcp.database.schema import (
+    Base,
+    Molecule,
+    Calculation,
+    Result,
+    BasisSetRecord,
+)
+from psi4_mcp.database.manager import DatabaseManager, get_database_manager
+from psi4_mcp.database.queries import (
+    get_molecule_by_name,
+    get_calculations_for_molecule,
+    search_results,
+)
+
+__all__ = [
+    "Base",
+    "Molecule",
+    "Calculation",
+    "Result",
+    "BasisSetRecord",
+    "DatabaseManager",
+    "get_database_manager",
+    "get_molecule_by_name",
+    "get_calculations_for_molecule",
+    "search_results",
+]

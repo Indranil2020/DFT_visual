@@ -1,9 +1,9 @@
 """
-Psi4 MCP Server - Placeholder Module
+Database Migrations for Psi4 MCP Server.
 
-This file is part of the Psi4 MCP Server implementation.
-TODO: Implement according to psi4_mcp_comprehensive_plan.md
+Handles schema migrations for the database.
 """
 
-# TODO: Add implementation
-pass
+from psi4_mcp.database.migrations.v001_initial import migrate_v001
+
+__all__ = ["migrate_v001"]
