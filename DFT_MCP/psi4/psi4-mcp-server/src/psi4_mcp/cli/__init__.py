@@ -1,9 +1,10 @@
 """
-Psi4 MCP Server - Placeholder Module
+Command Line Interface for Psi4 MCP Server.
 
-This file is part of the Psi4 MCP Server implementation.
-TODO: Implement according to psi4_mcp_comprehensive_plan.md
+Provides CLI commands for starting the server, running tests,
+converting files, and validating inputs.
 """
 
-# TODO: Add implementation
-pass
+from psi4_mcp.cli.main import main, cli
+
+__all__ = ["main", "cli"]

@@ -1,9 +1,12 @@
 """
-Psi4 MCP Server - Placeholder Module
+CLI Commands for Psi4 MCP Server.
 
-This file is part of the Psi4 MCP Server implementation.
-TODO: Implement according to psi4_mcp_comprehensive_plan.md
+Command implementations for the CLI.
 """
 
-# TODO: Add implementation
-pass
+from psi4_mcp.cli.commands.start import run_start
+from psi4_mcp.cli.commands.test import run_test
+from psi4_mcp.cli.commands.validate import run_validate
+from psi4_mcp.cli.commands.convert import run_convert
+
+__all__ = ["run_start", "run_test", "run_validate", "run_convert"]
