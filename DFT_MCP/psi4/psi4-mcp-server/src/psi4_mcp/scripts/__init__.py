@@ -1,9 +1,14 @@
 """
-Psi4 MCP Server - Placeholder Module
+Scripts Module for Psi4 MCP Server.
 
-This file is part of the Psi4 MCP Server implementation.
-TODO: Implement according to psi4_mcp_comprehensive_plan.md
+Provides utility scripts for benchmarking, documentation generation,
+dependency installation, and environment setup.
 """
 
-# TODO: Add implementation
-pass
+from psi4_mcp.scripts.benchmark import run_benchmark
+from psi4_mcp.scripts.setup_env import setup_environment
+
+__all__ = [
+    "run_benchmark",
+    "setup_environment",
+]
