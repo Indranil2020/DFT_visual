@@ -1,9 +1,30 @@
 """
-Psi4 MCP Server - Placeholder Module
+Psi4 MCP Server - Model Context Protocol Server for Psi4 Quantum Chemistry.
 
-This file is part of the Psi4 MCP Server implementation.
-TODO: Implement according to psi4_mcp_comprehensive_plan.md
+A comprehensive MCP server providing 124 quantum chemistry tools for:
+- Energy calculations (HF, DFT, MP2, CCSD, CCSD(T), FCI)
+- Geometry optimization
+- Vibrational analysis (frequencies, thermochemistry)
+- Molecular properties (dipole, charges, orbitals)
+- Spectroscopy (IR, Raman, UV-Vis, NMR, EPR)
+- Excited states (TD-DFT, EOM-CCSD, ADC)
+- Intermolecular interactions (SAPT)
+- Solvation models (PCM, SMD)
+- And much more...
+
+Usage:
+    # As MCP server
+    python -m psi4_mcp.server
+    
+    # Import models directly
+    from psi4_mcp.models import CalculationInput, CalculationOutput
+    
+See https://github.com/your-repo/psi4-mcp-server for documentation.
 """
 
-# TODO: Add implementation
-pass
+from psi4_mcp.__version__ import __version__, __version_info__
+
+__all__ = [
+    "__version__",
+    "__version_info__",
+]
